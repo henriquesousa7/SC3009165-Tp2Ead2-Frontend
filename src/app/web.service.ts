@@ -8,7 +8,7 @@ import { Observable} from "rxjs";
 })
 export class WebService {
 
-  baseURL = "https://https://tp2ead2-sc3009165-henriquesousa.glitch.me/api";
+  baseURL = "https://tp2ead2-sc3009165-henriquesousa.glitch.me/api";
 
   getProdutos() : Observable<Produto[]> {
     return this.http.get<Produto[]>(this.baseURL + "/produtos");
