@@ -1,5 +1,10 @@
 # TP2 - Documento
 
+GET: /api/produtos/
+
+Retorna todos os produtos cadastrados.
+
+----------------
 GET: /api/produtos/:id
 
 Retorna o produto selecionado de acordo com o _id de parâmetro.
@@ -13,26 +18,25 @@ POST: /api/produtos
 Cadastra um novo produto de acordo com as informações passadas.
 
 Requer:
+   "titulo" - O nome do produto.
    "preco" - Um número que corresponde ao preço do produto
-   "validade" - Uma string no formato "yyyy/mm/dd" com o dia da validade do produto.
-   "nome" - O nome do produto.
+   "descricao" - A descricao do produto.
 
 ----------------
-POST: /api/produtos
+PUT: /api/produtos/:id
 
-Cadastra um novo produto de acordo com as informações passadas.
+Atualiza os dados de um produto ja cadastrado de acordo com o _id de parâmetro.
 
 Requer:
+   "_id" - String contendo o _id do produto a ser selecionado.
+   "titulo" - O nome do produto.
    "preco" - Um número que corresponde ao preço do produto
-   "validade" - Uma string no formato "yyyy/mm/dd" com o dia da validade do produto.
-   "nome" - O nome do produto.
+   "descricao" - A descricao do produto.
 
 ----------------
-POST: /api/produtos
+DELETE: /api/produtos/:id
 
-Cadastra um novo produto de acordo com as informações passadas.
+Deleta um produto ja cadastrado de acordo com o _id de parâmetro.
 
 Requer:
-   "preco" - Um número que corresponde ao preço do produto
-   "validade" - Uma string no formato "yyyy/mm/dd" com o dia da validade do produto.
-   "nome" - O nome do produto.
+      "_id" - String contendo o _id do produto a ser selecionado.
