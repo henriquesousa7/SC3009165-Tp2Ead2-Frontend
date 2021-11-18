@@ -7,7 +7,7 @@ import { Produto } from './Produto';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'tutorialWebservice';
+  title = 'SC3009165 - Produtos';
   produtoEditar : Produto;
 
   edicao(produto : Produto) {
