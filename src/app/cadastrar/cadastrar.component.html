@@ -1,0 +1,34 @@
+<div class="columns my-5 is-centered">
+    <div class="column is-6">
+        <div class="field">
+            <label class="label">Título
+                <div class="control">
+                    <input [(ngModel)]="produto.title" placeholder="Título" class="input"> 
+                </div>
+            </label>
+        </div>
+
+        <div class="field">
+            <label class="label">Preço
+                <div class="control">
+                    <input [(ngModel)]="produto.price" placeholder="Preço" class="input">
+                </div>
+            </label>
+        </div>
+
+        <div class="field">
+            <label class="label">Descrição
+                <div class="control">
+                    <textarea [(ngModel)]="produto.description" placeholder="Descrição" class="textarea"></textarea>
+                </div>
+            </label>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <button *ngIf="edicao" (click)="cadastrar()" class="button is-link">Editar produto</button>
+                <button *ngIf="!edicao" (click)="cadastrar()" class="button is-link">Cadastro de produto</button>
+            </div>
+        </div>
+    </div>
+</div>

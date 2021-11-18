@@ -1,0 +1,29 @@
+<div class="columns my-5 is-centered">
+    <div class="column is-6">
+        <table class="table is-bordered is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th class="has-text-centered">Preço</th>
+                    <th class="has-text-centered">Descrição</th>
+                    <th class="has-text-centered">Título</th>
+                    <th class="has-text-centered">Opção</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of listaProdutos">
+                    <td class="has-text-centered">R$ {{p.preco}}</td>
+                    <td class="has-text-centered">{{p.descricao}}</td>
+                    <td class="has-text-centered">{{p.titulo}}</td>
+                    <td class="has-text-centered">
+                        <div class="buttons is-centered">
+                            <button class="button is-danger" (click)="editar(p)" class="button is-warning">Editar</button>
+                            <button class="button is-danger" (click)="deletar(p)" class="button is-danger">Deletar</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
