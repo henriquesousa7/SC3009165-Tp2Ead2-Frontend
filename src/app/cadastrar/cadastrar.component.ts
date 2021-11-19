@@ -19,21 +19,31 @@ export class CadastrarComponent implements OnInit {
   cadastrar() {
     console.log(this.edicao)
     if(this.edicao) {
-      this.web.editarProduto(this.produto, this.produtoEditar._id).subscribe(res => {
-        if(res.ok == true) {
-          alert("Edicao realizada com sucesso");
-        } else {
-          alert("A edicao não foi realizada!");
-        }
-      });
+      if(this.produto.title != "" && this.produto.description != "" && this.produto.price != 0) {
+        this.web.editarProduto(this.produto, this.produtoEditar._id).subscribe(res => {
+          if(res.ok == true) {
+            alert("Edicao realizada com sucesso");
+          } else {
+            alert("A edicao não foi realizada!");
+          }
+        });
+      } else {
+        alert("Há campos vazios que precisam ser preenchidos");
+      }
+      
     } else {
-      this.web.cadastrarProduto(this.produto).subscribe(res => {
-        if(res.ok == true) {
-          alert("O cadastro foi realizado com sucesso");
-        } else {
-          alert("O cadastro não foi realizado!");
-        }
-      });
+      if(this.produto.title != "" && this.produto.description != "" && this.produto.price != 0) {
+        this.web.cadastrarProduto(this.produto).subscribe(res => {
+          if(res.ok == true) {
+            alert("O cadastro foi realizado com sucesso");
+          } else {
+            alert("O cadastro não foi realizado!");
+          }
+        });
+      } else {
+        alert("Há campos vazios que precisam ser preenchidos");
+      }
+      
     }
     
   }
